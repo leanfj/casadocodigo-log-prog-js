@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Anos de Olimpiada</title>
+</head>
+<body>
+  <script>
+    function mostra(frase) {
+      document.write(frase + "<br>");
+    }
+    var anoDaOlimpiada = prompt("Qual o ano de início desejado");
+    var anoDaOlimpiadaNum = parseInt(anoDaOlimpiada);
+    var anoLimite = prompt("Até que ano quer saber se tem Olimpiada");
+    while (anoDaOlimpiadaNum <= anoLimite) {
+      mostra( anoDaOlimpiadaNum + " Tem Olimpiada");
+      anoDaOlimpiadaNum = anoDaOlimpiadaNum + 4;
+    }
+    mostra("Esse foram os anos da Olimpiada até " + anoLimite);
+  </script>
+</body>
+</html>
