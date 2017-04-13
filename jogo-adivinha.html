@@ -16,22 +16,40 @@
       document.write(frase);
       pulaLinha();
     }
+    function sorteia(n) {
+      var numero = Math.round(Math.random() * n);
+      return numero;
+    }
 
     // Utilização da function Math.random para gerar um numero aleatorio entre 0 e 100
-    var numero = Math.random() * 100;
+    // var numero = Math.random() * 10;
 
 
-    var numeroPensado = Math.round(numero);
+    var numeroPensado = sorteia(10);
     // console.log(numeroPensado);
-    var palpite = prompt("Já pensei em um número de 0 a 100. Você sabe qual é?");
+    var palpite = prompt("Já pensei em um número de 0 a 10. Você sabe qual é?");
+
+    if (isNaN(palpite)) {
+      mostra("Use somente números");
+    }
 
     if (palpite == numeroPensado) {
       mostra("Não é que você acertou pensei no numero " + numeroPensado);
     }
-    // Utilização do operador de diferença
-    if (palpite != numeroPensado) {
-      mostra("Não foi dessa vez, eu pensei no número " + numeroPensado);
+    if (palpite < numeroPensado) {
+      mostra("Não foi dessa vez, eu pensei em um número maior e foi " + numeroPensado);
     }
+    if (palpite > numeroPensado) {
+      mostra("Não foi dessa vez, eu pensei em um número menor e foi " + numeroPensado);
+    }
+    // Utilização do operador de diferença
+    // if (palpite != numeroPensado) {
+    //   mostra("Não foi dessa vez, eu pensei no número " + numeroPensado);
+    // }
+    //
+    // else {
+    //   mostra("Não foi dessa vez")
+    // }
 
   </script>
 </body>
