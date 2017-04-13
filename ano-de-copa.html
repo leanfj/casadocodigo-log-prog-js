@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Anos de Copa do Mundo</title>
+</head>
+<body>
+  <script>
+    function mostra(frase) {
+      document.write(frase + "<br>");
+    }
+    var anoDaCopa = 1930;
+    var anoLimite = prompt("Até que ano quer saber se tem copa")
+    while (anoDaCopa <= anoLimite) {
+      mostra( anoDaCopa + " Tem Copa do Mundo");
+      anoDaCopa = anoDaCopa + 4;
+    }
+    mostra("Esse foram os anos da copa até " + anoLimite);
+  </script>
+</body>
+</html>
