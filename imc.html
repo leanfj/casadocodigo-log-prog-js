@@ -45,12 +45,14 @@
     if (imc > 35) {
       mostra("Seu IMC indica que esta ACIMA do peso");
     }
-    if (imc > 18.5) {
-      if (imc < 35) {
-        mostra("Seu IMC indica que está dentro dos limites");
-      }
+    // if (imc > 18.5) {
+    //   if (imc < 35) {
+    //     mostra("Seu IMC indica que está dentro dos limites");
+    //   }
+    // }
+    if (imc >= 18.5 && imc <= 35) {
+      mostra("Seu IMC indica que está dentro dos limites");
     }
-
 
     // mostra(nome + ", você está a " + (imc - 18.5).toFixed(2) + " pontos acima do limite de magreza");
     // mostra(nome + ", você também está a " + (35 - imc).toFixed(2) + " pontos distante do limite de obesidade severa");
