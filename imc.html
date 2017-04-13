@@ -38,8 +38,22 @@
     // mostra("E tambem estou " + (35 - imc) + " pontos abaixo do limite de obesidade severa");
 
     mostra(nome + " O seu IMC é de: " + imc);
-    mostra(nome + ", você está a " + (imc - 18.5).toFixed(2) + " pontos acima do limite de magreza");
-    mostra(nome + ", você também está a " + (35 - imc).toFixed(2) + " pontos distante do limite de obesidade severa");
+
+    if (imc < 18.5) {
+      mostra("Seu IMC indica que esta ABAIXO do peso");
+    }
+    if (imc > 35) {
+      mostra("Seu IMC indica que esta ACIMA do peso");
+    }
+    if (imc > 18.5) {
+      if (imc < 35) {
+        mostra("Seu IMC indica que está dentro dos limites");
+      }
+    }
+
+
+    // mostra(nome + ", você está a " + (imc - 18.5).toFixed(2) + " pontos acima do limite de magreza");
+    // mostra(nome + ", você também está a " + (35 - imc).toFixed(2) + " pontos distante do limite de obesidade severa");
 
 
     // Usando a função para calculo do IMC
