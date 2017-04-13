@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Jogo do Advinha</title>
+</head>
+<body>
+  <script>
+    function pulaLinha() {
+      document.write("<hr>");
+      document.write("<br>");
+    }
+    function mostra(frase) {
+      document.write(frase);
+      pulaLinha();
+    }
+
+    // Utilização da function Math.random para gerar um numero aleatorio entre 0 e 100
+    var numero = Math.random() * 100;
+
+
+    var numeroPensado = Math.round(numero);
+    // console.log(numeroPensado);
+    var palpite = prompt("Já pensei em um número de 0 a 100. Você sabe qual é?");
+
+    if (palpite == numeroPensado) {
+      mostra("Não é que você acertou pensei no numero " + numeroPensado);
+    }
+    // Utilização do operador de diferença
+    if (palpite != numeroPensado) {
+      mostra("Não foi dessa vez, eu pensei no número " + numeroPensado);
+    }
+
+  </script>
+</body>
+</html>
