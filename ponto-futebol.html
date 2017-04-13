@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Pontos futebol</title>
+</head>
+<body>
+  <script>
+    function pulalinha() {
+      document.write("<hr>");
+      document.write("<br>")
+    };
+    function mostra(frase) {
+      document.write(frase);
+      pulalinha();
+    };
+    function calculaPontos(vitorias, empates) {
+      var pontos = (vitorias * 3) + parseInt(empates) - parseInt(derrotas);
+      return pontos;
+    };
+    // O valor recebido pelo prompt vem no tipo string
+    var nomeDoTime = prompt("Qual o nome do time");
+    var vitorias = prompt("Quantas jogos o " + nomeDoTime + " venceu?");
+    var empates = prompt("Quantos jogos o " + nomeDoTime + " empatou?");
+    var derrotas = prompt("Quantas jogos o " + nomeDoTime + " perdeu?")
+    var nomeAdversario = prompt("Qual o nome do time adversário");
+    var vitoriasAdversario = prompt("Quantos jogos o " + nomeAdversario + " venceu?");
+    var empatesAdversario = prompt("Quantos jogos o " + nomeAdversario + " empatou?");
+    var derrotasAdversario = prompt("Quanto jogos o " + nomeAdversario + " perdeu?");
+    // parseInt função para transformar string em inteiro.
+    var pontos = calculaPontos(vitorias, empates);
+    var pontosAdversario = calculaPontos(vitoriasAdversario, empatesAdversario);
+
+    mostra("O time do " + nomeDoTime + " está com " + pontos + " pontos");
+    mostra("O time do " + nomeAdversario + " está com " + pontosAdversario + " pontos");
+
+    if (pontos > pontosAdversario) {
+      mostra("Nosso time está indo bem");
+    }
+    if (pontos < pontosAdversario) {
+      mostra("nosso time esta mal");
+    }
+    if (pontos == pontosAdversario) {
+      mostra("nosso time está empatado");
+    }
+
+  </script>
+</body>
+</html>
