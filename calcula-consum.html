@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Calcula Consumo</title>
+</head>
+<body>
+  <h3>Calcula consumo</h3>
+  <h3>Alcool ou Gasolina</h3>
+  <script>
+    var tanque = 40;
+    var caminhoComGasolina = 480;
+    var caminhoComAlcool = 300;
+    var consumoDeGasolina = caminhoComGasolina / tanque;
+    var consumoDeAlcool = caminhoComAlcool / tanque;
+    var precoDaGasolina = 2.90;
+    var precoDoAlcool = 2.40;
+    var precoPorKilometroGasolina = precoDaGasolina / consumoDeGasolina;
+    var precoPorKilometroAlcool = precoDoAlcool / consumoDeAlcool;
+
+    document.write("Consumo de gasolina é: " + consumoDeGasolina + "Km e o valor gasto por Km é de: R$ " + precoPorKilometroGasolina.toFixed(2) + "<br>" );
+    document.write("Comsumo de alcool é: " + consumoDeAlcool + "Km e o valor gasto por Km é de: R$ " + precoPorKilometroAlcool)
+  </script>
+</body>
+</html>

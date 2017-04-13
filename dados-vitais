@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Dados Vitais</title>
+</head>
+<body>
+  <script>
+    var pulalinha = function (){
+      document.write("<hr>");
+      document.write("<br>");
+    };
+    var mostra = function (frase) {
+      document.write(frase);
+      pulalinha();
+    }
+
+
+    // Variáveis que recebem functions devem ser daclaradas antes do seu uso
+    // var calculaDiasDeVida = function (idade) {
+    //   var dias = idade * 365;
+    //   return dias;
+    // }
+    // var calculaBatimentos = function (dias) {
+    //   var batimentos = dias * 24 * 60 * 80;
+    //   return batimentos;
+    // }
+
+    var idade = prompt("Quantos anos você tem?");
+
+    var dias = calculaDiasDeVida(idade);
+    var batimentos = calculaBatimentos(calculaDiasDeVida(idade));
+
+    mostra("Você ja viveu " + dias + " dias de vida");
+    mostra("E o seu coração ja bateu " + batimentos + " de vezes.")
+
+
+    // Functions pode ser usadas sendo declaradas apos a sua utilização
+    function calculaDiasDeVida(idade) {
+      var dias = idade * 365;
+      return dias;
+    };
+
+    function calculaBatimentos(dias) {
+      var batimentos = dias * 24 * 60 * 80;
+      return batimentos;
+    };
+
+
+
+  </script>
+</body>
+</html>

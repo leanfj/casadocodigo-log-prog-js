@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mostra idades - 2</title>
+</head>
+<body>
+
+  <script>
+    var pulalinha = function () {
+      document.write("<br>");
+      document.write("<hr>");
+      document.write("<br>");
+    };
+    var mostra = function (frase) {
+      document.write("<big>" + frase + "</big>");
+      pulalinha();
+    }
+
+    var ano = 2017;
+
+    mostra("Eu nasci em: " + (ano - 31));
+    mostra("Fulano nasceu em: " + (ano - 51));
+    mostra("Siclano nasceu em: " +(ano -25));
+    mostra("Leandro é demais");
+
+    console.log("Vai aparece apenas no log");
+  </script>
+</body>
+</html>

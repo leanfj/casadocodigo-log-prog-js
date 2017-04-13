@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Funções</title>
+</head>
+<body>
+  <script>
+    var pulalinha = function (){
+      document.write("<hr>");
+      document.write("<br>");
+    };
+    var mostra = function (frase) {
+      document.write(frase);
+      pulalinha();
+    };
+
+    var primeira = function () {
+      console.log(" 1 - antes");
+      segunda();
+      console.log(" 1 - depois");
+    };
+
+    var segunda = function () {
+      console.log(" 2 - antes");
+      terceira();
+      console.log(" 2 - depois");
+    };
+
+    var terceira = function () {
+      console.log("3");
+    };
+
+    primeira();
+  </script>
+</body>
+</html>
