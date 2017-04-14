@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Jogo Adivinha com tentativas</title>
+</head>
+<body>
+  <script>
+    function mostra(frase) {
+      document.write(frase + "<br>");
+    }
+    var numeroSorteado = Math.round(Math.random() * 100);
+
+    var numeroTentativas = 1
+
+    alert("Pensei em um número 0 a 100. Você consegue acertar?")
+    while ( true && palpite != numeroSorteado) {
+      var palpite = prompt("Qual o seu palpite?");
+
+      if (palpite == numeroSorteado) {
+        alert("Acertou mizeravi, pensei no número " + numeroSorteado);
+        // break;
+      } /*else if (numeroTentativas == 5) {
+        alert("Você não pode mais jogar aperte F5 para tentar denovo");
+      }*/else {
+        if (palpite < numeroSorteado) {
+          alert("O seu palpite foi menor que o numero que pensei");
+        }
+        if (palpite > numeroSorteado) {
+          alert("O seu palpite foi maior que o numero que pensei");
+        }
+        alert("Você ja tentou " + numeroTentativas + " vezes")
+        // alert("Você tem mais " + (5 - numeroTentativas) + " tentativas");
+      }
+      numeroTentativas++;
+    }
+
+
+  </script>
+</body>
+</html>
