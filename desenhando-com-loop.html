@@ -15,16 +15,21 @@
       document.write(frase);
     }
 
-    var tamanho = prompt("Qual o tamanho desejado do quadrado");
+    // var tamanho = prompt("Qual o tamanho desejado do quadrado");
 
-    for (var linha = 0; linha < tamanho; linha = linha + 1) {
+    var tamanho = 0
+
+    for (var linha = 0; linha < 10; linha = linha + 1) {
       // mostra("**********");
       // pulaLinha();
-      for (var coluna = 0; coluna < tamanho; coluna = coluna + 1) {
-        mostra("* ");
+      for (var coluna = 0; coluna <= tamanho ; coluna = coluna + 1) {
+        mostra("*");
       }
+      tamanho = tamanho + 1;
       pulaLinha();
     }
+
+
   </script>
 </body>
 </html>
