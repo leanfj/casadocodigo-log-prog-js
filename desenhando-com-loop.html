@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Desenhando com Loop</title>
+</head>
+<body>
+  <script>
+    function pulaLinha() {
+      document.write("<br>");
+    }
+    function mostra(frase) {
+      document.write(frase);
+    }
+
+    for (var linha = 0; linha < 10; linha = linha + 1) {
+      // mostra("**********");
+      // pulaLinha();
+      for (var coluna = 0; coluna < 10; coluna = coluna + 1) {
+        mostra("* ");
+      }
+      pulaLinha();
+    }
+  </script>
+</body>
+</html>
