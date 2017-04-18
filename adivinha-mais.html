@@ -10,7 +10,19 @@
   <input id="numero" type="text" name="" value="">
   <input  id="adivinhar" type="submit" name="" value="Compare meu segredo">
   <script>
-    var segredo = Math.round(Math.random() * 10);
+    // var segredo = Math.round(Math.random() * 10);
+    // array
+    var segredo = [16, 34, 37, 42, 50, 58];
+    // imprimir todos o numeros do array
+    for (var i = 0; i < 6; i++) {
+      console.log(segredo[i]);
+    }
+    // Saber o tamanho do array
+    console.log(segredo.length);
+    // Imprimindo usando o length para saber o tamanho do array
+    for (var i = 0; i < segredo.length; i++) {
+      console.log(segredo[i]);
+    }
     console.log(segredo);
     // Seleciona no documento o elemeto com o id específico e adciona a variável
     var caixaNumero = document.getElementById("numero");
