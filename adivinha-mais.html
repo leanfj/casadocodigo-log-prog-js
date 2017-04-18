@@ -10,12 +10,20 @@
   <input id="numero" type="text" name="" value="">
   <input  id="adivinhar" type="submit" name="" value="Compare meu segredo">
   <script>
+    var segredo = Math.round(Math.random() * 10);
+    console.log(segredo);
     // Seleciona no documento o elemeto com o id específico e adciona a variável
     var caixaNumero = document.getElementById("numero");
 
     // Cria a função para exibir o alerta com o valor capturado do elemento selecionado
     var botaoClicado = function () {
-      alert(caixaNumero.value);
+      // alert(caixaNumero.value);
+      if (segredo == caixaNumero.value) {
+        alert("Acertou o numero secreto!");
+      } else {
+        alert("Você errou o número");
+      }
+      caixaNumero.value = "";
     }
     var botaoAdivinhar = document.getElementById("adivinhar");
     // Atribui ao elemento selecionado o evento para acionar a função
