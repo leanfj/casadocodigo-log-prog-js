@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Loteria</title>
+</head>
+<body>
+  <input id="numero" type="text" name="" value="">
+  <input id="adivinhar" type="submit" name="" value="Clicke para adivinhar">
+  <script>
+    var segredo = [16, 20, 33, 48, 52, 59];
+
+    var caixaNumero = document.getElementById("numero");
+
+    var botaoClicado = function () {
+      for (var i = 0; i < segredo.length; i++) {
+        if (segredo[i] == caixaNumero.value) {
+          // Exibição do numero contido na var i para representar o indice esta sendo somado para mostra o indice sem o zero inicial e começar a contar a partir 1
+          alert("Parabéns, você acertou " + (i + 1) + "º numero");
+          var achou = true;
+          caixaNumero.value = "";
+          // Utilização do return para parar a execução da função retornando para quem chamou sem valor algum
+          // return;
+        }
+      }
+      // Verificação da variável criada para excutar a msg e definir se deve mostrar a msg parando a excução da função
+      if (achou != true) {
+        alert("Você errou!");
+        caixaNumero.value = "";
+      }
+
+      // A remoção dos breaks com a var achou ou return no caso de acertar ele ainda vai mostrar a msg de arrado quando ele termina e iteração do laço for
+
+    };
+
+    var botaoAdivinhar = document.getElementById("adivinhar");
+
+    botaoAdivinhar.onclick = botaoClicado;
+
+
+  </script>
+</body>
+</html>
