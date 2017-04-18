@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Bingo</title>
+</head>
+<body>
+  <input type="text" name="" value="" id="numero">
+  <input type="submit" name="" value="Incluir Numero" id="incluir">
+  <input type="submit" name="" value="Sortear numeros" id="sortear">
+  <input type="submit" name="" value="Verificar" id="verificar">
+  <script>
+    var sorteados = [];
+    var palpite = [];
+
+    var sortearNumeros = function () {
+      for (var i = 0; i < 6; i++) {
+        var numero = Math.round(Math.random() * 60);
+        // Inserir o numero no final do array
+        sorteados.push(numero);
+      }
+      console.log(sorteados);
+    };
+    var incluiNumero = function () {
+      var numeros = document.getElementById("numero").value
+      palpite.push(numeros);
+      console.log(palpite);
+    }
+
+    var verificaNumeros = function () {
+      for (var i = 0; i < palpite.length; i++) {
+        } if (palpite[i] == sorteados[i]) {
+          alert("Você acertou" + (i + 1) + " Numeros");
+          return;
+        }
+      }
+      alert("Você errou");
+    };
+
+    var incluirPalpite = document.getElementById("incluir");
+    incluirPalpite.onclick = incluiNumero;
+
+    var sorteiaNumeros = document.getElementById("sortear");
+    sorteiaNumeros.onclick = sortearNumeros;
+
+    var verifica = document.getElementById("verificar");
+    verifica.onclick = verificaNumeros;
+
+
+  </script>
+</body>
+</html>
