@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Adivinha Mais</title>
+</head>
+<body>
+  <input id="numero" type="text" name="" value="">
+  <input  id="adivinhar" type="submit" name="" value="Compare meu segredo">
+  <script>
+    // Seleciona no documento o elemeto com o id específico e adciona a variável
+    var caixaNumero = document.getElementById("numero");
+
+    // Cria a função para exibir o alerta com o valor capturado do elemento selecionado
+    var botaoClicado = function () {
+      alert(caixaNumero.value);
+    }
+    var botaoAdivinhar = document.getElementById("adivinhar");
+    // Atribui ao elemento selecionado o evento para acionar a função
+    botaoAdivinhar.onclick = botaoClicado;
+
+  </script>
+</body>
+</html>
