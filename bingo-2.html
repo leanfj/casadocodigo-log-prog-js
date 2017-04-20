@@ -18,8 +18,16 @@
     var sortearNumeros = function () {
       for (var i = 0; i < 6; i++) {
         var numero = Math.round(Math.random() * 60);
+
+        // Utilizado o indexof para verificar se haverá numeros repetidos dentro dos sorteados
+        if (sorteados.indexOf(numero) > -1) {
+          alert("Sorteio teve numeros repitidos, sorteie denovo");
+          sorteados = [];
+          return;
+        } else {
         // Inserir o numero no final do array
         sorteados.push(numero);
+        }
       }
       console.log(sorteados);
     };
@@ -27,16 +35,19 @@
       var numeros = document.getElementById("numero").value
       palpite.push(numeros);
       console.log(palpite);
-    }
+    };
 
     var verificaNumeros = function () {
+      var resultado = 0;
       for (var i = 0; i < palpite.length; i++) {
-        } if (palpite[i] == sorteados[i]) {
-          alert("Você acertou" + (i + 1) + " Numeros");
-          return;
+
+        // Utilização do metodo indexOf para verificar os numeros do palpite em qualquer posição da array de numeros sorteados
+        if (sorteados.indexOf(parseInt(palpite[i])) > -1) {
+          resultado++;
         }
       }
-      alert("Você errou");
+      alert("Você acertou " + (resultado) + " Numeros");
+
     };
 
     var incluirPalpite = document.getElementById("incluir");
@@ -47,7 +58,6 @@
 
     var verifica = document.getElementById("verificar");
     verifica.onclick = verificaNumeros;
-
 
   </script>
 </body>
