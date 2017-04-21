@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Canvas</title>
+  <style media="screen">
+    canvas {
+      box-shadow: 2px 2px 5px #000;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="tela" width="600" height="400"></canvas>
+  <hr>
+  <canvas id="tela2" width="600" height="400"></canvas>
+  <hr>
+  <canvas id="tela3" width="600" height="400"></canvas>
+  <hr>
+  <canvas id="tela4" width="600" height="400"></canvas>
+  <hr>
+  <canvas id="tela5" width="600" height="400"></canvas>
+  <hr>
+  <canvas id="tela6" width="600" height="400"></canvas>
+  <hr>
+  <canvas id="tela7" width="600" height="400"></canvas>
+  <script>
+    var tela = document.getElementById("tela");
+    var c = tela.getContext("2d");
+
+    // Desenhando retangulo
+    c.fillStyle = "green";
+    c.fillRect(0, 0, 200, 400);
+    c.fillStyle = "red";
+    c.fillRect(400, 0, 200, 400);
+
+
+    // Desenhando triangulo
+    c.fillStyle = "grey";
+    c.beginPath();
+    c.moveTo(300, 200);
+    c.lineTo(200, 400);
+    c.lineTo(400, 400);
+    c.fill();
+
+    // Desenhando Circulo
+    c.fillStyle = "blue";
+    c.beginPath();
+    // c.arc(300, 200, 70, 0, 2*3.14);
+    c.arc(300, 200, 70, 0, 2 * Math.PI)
+    c.fill();
+
+
+    // 7.4 Exerc. Fig 7.9
+    var tela2 = document.getElementById("tela2");
+    var c2 = tela2.getContext("2d");
+
+    c2.fillStyle = "gold";
+    c2.fillRect(0, 0, 600, 200);
+
+    c2.fillStyle = "blue";
+    c2.fillRect(0, 200, 600, 100);
+
+    c2.fillStyle = "red";
+    c2.fillRect(0, 300, 600, 100);
+
+    // 7.4 Exerc. Fig 7.10
+    var tela3 = document.getElementById("tela3");
+    var c3 = tela3.getContext("2d");
+
+    c3.fillStyle = "red";
+    c3.fillRect(200, 0, 400, 200);
+
+    c3.fillStyle = "green";
+    c3.fillRect(200, 200, 400, 200);
+
+    // 7.4 Exerc Fig 7.11
+
+    var tela4 = document.getElementById("tela4");
+    var c4 = tela4.getContext("2d");
+
+    c4.fillStyle = "red";
+    c4.fillRect(0, 0, 600, 100);
+    c4.fillRect(0, 300, 600, 100);
+
+    c4.fillStyle = "blue";
+    c4.fillRect(0, 100, 600, 200);
+
+    c4.fillStyle = "white";
+    c4.beginPath();
+    c4.arc(300, 200, 80, 0 , 2 * Math.PI);
+    c4.fill();
+
+    // 7.4 Exerc Fig 7.12
+    var tela5 = document.getElementById("tela5");
+    var c5 = tela5.getContext("2d");
+
+    c5.fillStyle = "orange";
+    c5.fillRect(0, 0, 600, 125);
+    c5.beginPath();
+    c5.arc(300, 200, 60, 0, 2 * Math.PI);
+    c5.fill();
+
+    c5.fillStyle = "green";
+    c5.fillRect(0, 275, 600, 125);
+
+    // 7.4 Exerc Fig 7.13
+    var tela6 = document.getElementById("tela6");
+    var c6 = tela6.getContext("2d");
+
+    c6.fillStyle = "red";
+    c6.fillRect(0,0,150,150);
+    c6.fillRect(0,250,150,150);
+    c6.fillRect(250, 0, 350, 150);
+    c6.fillRect(250, 250, 350, 150);
+
+    c6.fillStyle = "blue";
+    c6.fillRect(0, 170, 600, 60);
+    c6.fillRect(170, 0, 60, 400);
+
+    // 7.4 Desafio Bandeira do Brasil
+    var tela7 = document.getElementById("tela7");
+    var c7 = tela7.getContext("2d");
+
+    c7.fillStyle = "green";
+    c7.fillRect(0, 0, 600, 400);
+
+    c7.fillStyle = "yellow";
+    c7.beginPath();
+    c7.moveTo(300, 10);
+    c7.lineTo(10, 200);
+    c7.lineTo(300, 390);
+    c7.lineTo(590, 200);
+    c7.fill();
+
+    c7.fillStyle = "blue";
+    c7.beginPath();
+    c7.arc(300, 200, 120, 0, 2*3.14);
+    c7.fill();
+    </script>
+</body>
+</html>
