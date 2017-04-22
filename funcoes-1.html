@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Funções no Canvas</title>
+</head>
+<body>
+  <canvas id="canvas1" width="600" height="400"></canvas>
+  <script type="text/javascript">
+    var tela = document.getElementById("canvas1");
+    var c = tela.getContext("2d");
+
+    c.fillStyle = "blue";
+
+    var funcaoQuadratica = function (x) {
+      return 0.01 * x * x;
+    }
+    var funcaoSeno = function (x) {
+      return Math.sin(x/20) * 100 + 200;
+    }
+    var desenhaFuncao = function (funcaoMatematica) {
+      for (var x = 0; x < 600; x++) {
+        var y = funcaoMatematica(x);
+        console.log("Para x = " + x + ", o y vale " + y );
+
+        c.beginPath();
+        c.arc(x, 400 - y, 2, 0, Math.PI*2);
+        c.fill();
+      }
+    };
+
+    // desenhaFuncao(funcaoQuadratica);
+    desenhaFuncao(funcaoSeno);
+  </script>
+</body>
+</html>
