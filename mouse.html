@@ -43,21 +43,26 @@
     // Log com o retorno do valor do botão presionado
     console.log(botaoPresionado);
 
-    // Verifica qual botão foi clicado e escolhe a opção
-    if (botaoPresionado == 1) {
-      // Desenha o circulo
-      c.fillStyle = "green";
-      c.beginPath();
-      c.arc(x, y, 10, 0, Math.PI*2);
-      c.fill();
-    } else {
-      // Desenha o circulo
-      c.fillStyle = "red";
-      c.beginPath();
-      c.arc(x, y, 10, 0, Math.PI*2);
-      c.fill();
+    // Desenha o circulo
+    c.fillStyle = "green";
+    c.beginPath();
+    c.arc(x, y, 10, 0, Math.PI*2);
+    c.fill();
 
-    }
+    // Verifica qual botão foi clicado e escolhe a opção
+    // if (botaoPresionado == 1) {
+    //   // Desenha o circulo
+    //   c.fillStyle = "green";
+    //   c.beginPath();
+    //   c.arc(x, y, 10, 0, Math.PI*2);
+    //   c.fill();
+    // } else {
+    //   // Desenha o circulo
+    //   c.fillStyle = "red";
+    //   c.beginPath();
+    //   c.arc(x, y, 10, 0, Math.PI*2);
+    //   c.fill();
+    // }
 
     // Log do pasição do click
     console.log("Click no x = "+x+" e no y = "+y);
@@ -67,7 +72,10 @@
 
 
   // No evento onmousedown verifica qual botão do mouse foi clicado esquerdo 1 direito 2
-  tela.onmousedown = desenhaCirculo;
+  // tela.onmousedown = desenhaCirculo;
+
+  // No evento onmousemove dentro do canvas desenha o circulo
+  tela.onmousemove = desenhaCirculo;
 
 
 </script>
