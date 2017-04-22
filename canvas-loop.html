@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Canvas Loop</title>
+</head>
+<body>
+  <canvas id="canvas1" width="600" height="200"></canvas>
+  <canvas id="canvas2" width="600" height="400"></canvas>
+  <hr>
+  <canvas id="canvas3" width="600" height="400"></canvas>
+  <script>
+    // var quadradoVerde = function (x, y) {
+    //   var tela = document.getElementById("canvas1");
+    //   var c = tela.getContext("2d");
+    //
+    //   c.fillStyle = "green";
+    //   c.fillRect(x, y, 50, 50);
+    //   c.strokeStyle = "black";
+    //   c.strokeRect(x, y, 50, 50);
+    // }
+    //
+    // var quadradoVermelho = function (x, y) {
+    //   var tela = document.getElementById("canvas1");
+    //   var c = tela.getContext("2d");
+    //
+    //   c.fillStyle = "red";
+    //   c.fillRect(x, y, 50, 50);
+    //   c.strokeStyle = "black";
+    //   c.strokeRect(x, y, 50, 50);
+    // }
+
+    var desenhaQuadrado = function (x, y, cor) {
+      var tela = document.getElementById("canvas1");
+      var c = tela.getContext("2d");
+
+      c.fillStyle = cor;
+      c.fillRect(x, y, 50, 50);
+      c.strokeStyle = "black";
+      c.strokeRect(x, y, 50, 50);
+    }
+
+    var bolaAzul = function (x, y, canvas) {
+      var tela = document.getElementById(canvas);
+      var c = tela.getContext("2d");
+
+      c.fillStyle = "blue";
+      c.beginPath();
+      c.arc(x + 25, y, 25, 0, Math.PI*2);
+      c.fill();
+
+    }
+    // var bolaAzul2 = function (x, y) {
+    //   var tela = document.getElementById("canvas2");
+    //   var c = tela.getContext("2d");
+    //
+    //   c.fillStyle = "blue";
+    //   c.beginPath();
+    //   c.arc(x + 25, y + 25, 25, 0, Math.PI*2);
+    //   c.fill();
+    //
+    // }
+    // var bolaAzul3 = function (x, y) {
+    //   var tela = document.getElementById("canvas3");
+    //   var c = tela.getContext("2d");
+    //
+    //   c.fillStyle = "blue";
+    //   c.beginPath();
+    //   c.arc(x + 25, y + 25, 25, 0, Math.PI*2);
+    //   c.fill();
+    //
+    // }
+    // quadradoVerde(0, 0);
+
+    // var x = 0;
+    // while (x < 600) {
+    //   quadradoVerde(x, 0);
+    //   x = x + 50;
+    // }
+
+    for (var x = 0; x < 600; x += 50) {
+      desenhaQuadrado(x, 0, "green");
+      desenhaQuadrado(x, 50, "red");
+      bolaAzul(x, 100, "canvas1");
+      // console.log(x);
+    }
+
+    for (var x = 0; x < 600; x += 50) {
+      for (var y = 0; y < 400; y += 50){
+        bolaAzul(x, y + 25, "canvas2");
+      }
+    }
+
+    var widthCanvas = 600;
+    var heightCanvas = 0;
+    for (var linha = 0; linha < widthCanvas ; linha += 50) {
+      for (var coluna = 0; coluna <= heightCanvas; coluna += 50) {
+        bolaAzul(linha, coluna + 25, "canvas3");
+      }
+
+      widthCanvas -= 50;
+      heightCanvas += 50;
+
+    }
+    // for (var x = 0; x < 600; x += 50) {
+    //   quadradoVermelho(x, 50);
+    // }
+
+
+  </script>
+</body>
+</html>
