@@ -15,10 +15,22 @@
 <script type="text/javascript">
   var tela = document.getElementById("canvas");
   var c = tela.getContext("2d");
-
   c.fillStyle = "grey";
-  c.fillRect(0, 0, 600, 400);
+  c.fillRect(0, 0, 500, 400);
 
+  c.fillStyle = "red";
+  c.fillRect(500, 0, 100, 100);
+
+  c.fillStyle = "blue";
+  c.fillRect(500, 100, 100, 100);
+
+  c.fillStyle = "pink";
+  c.fillRect(500, 200, 100, 100);
+
+  c.fillStyle = "yellow";
+  c.fillRect(500, 300, 100, 100);
+
+  c.fillStyle = "grey"
   // tela.onclick = function (evento) {
   //   var x = evento.pageX  - tela.offsetLeft;
   //   var y = evento.pageY - tela.offsetTop;
@@ -29,7 +41,23 @@
   //   c.fill();
   //   console.log("Click no x = "+ x +" e no y = "+ y);
   // }
-
+  var cor = "";
+  var escolheCor = function (e) {
+    var xcor = e.pageX;
+    var ycor = e.pageY;
+    if (xcor > 500) {
+      if (ycor < 100) {
+        cor = "red";
+      } if (ycor > 100 && ycor < 200) {
+        cor = "blue";
+      } if (ycor > 200 && ycor < 300) {
+        cor = "pink";
+      } if (ycor > 300) {
+        cor = "yellow";
+      }
+    }
+    console.log(xcor, ycor, cor);
+  };
   var desenhaCirculo = function (mouseEvent) {
 
     // Recebe a posição x e y dentro da pagina e subtrai o espaço da margem na esq e no topo de desenho co canvas
@@ -43,11 +71,14 @@
     // Log com o retorno do valor do botão presionado
     console.log(botaoPresionado);
 
-    // Desenha o circulo
-    c.fillStyle = "green";
-    c.beginPath();
-    c.arc(x, y, 10, 0, Math.PI*2);
-    c.fill();
+    if (x < 475 && botaoPresionado == 1) {
+      // Desenha o circulo
+      c.fillStyle = cor;
+      c.beginPath();
+      c.arc(x, y, 10, 0, Math.PI*2);
+      c.fill();
+    }
+
 
     // Verifica qual botão foi clicado e escolhe a opção
     // if (botaoPresionado == 1) {
@@ -68,14 +99,15 @@
     console.log("Click no x = "+x+" e no y = "+y);
   }
   // No evento onclick na tela do canvas chama a function para desenhar o circulo
-  // tela.onclick = desenhaCirculo;
+  tela.onmousedown = escolheCor;
+  tela.onmousemove = desenhaCirculo;
 
 
   // No evento onmousedown verifica qual botão do mouse foi clicado esquerdo 1 direito 2
   // tela.onmousedown = desenhaCirculo;
 
   // No evento onmousemove dentro do canvas desenha o circulo
-  tela.onmousemove = desenhaCirculo;
+  // tela.onmousemove = desenhaCirculo;
 
 
 </script>
