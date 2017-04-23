@@ -12,8 +12,8 @@
     var tela = document.getElementById("canvas");
     var c = tela.getContext("2d");
 
-    c.fillStyle = "green";
-    c.fillRect(0, 0, 200, 400);
+    // c.fillStyle = "green";
+    // c.fillRect(0, 0, 200, 400);
 
     var circulo = function (x, y, raio) {
       c.fillStyle = "blue";
@@ -22,11 +22,18 @@
       c.fill();
     }
 
+    var circuloArco = function (x, y, raio) {
+      c.strokeStyle = "blue";
+      c.beginPath();
+      c.arc(x, y, raio, 0, Math.PI*2);
+      c.stroke();
+    }
+
     var limpaTela = function () {
       c.clearRect(0, 0, 600, 400);
     }
 
-    
+
     // for (var x = 0; x < 600; x++) {
     //   limpaTela();
     //   circulo(x, 100, 10);
@@ -36,9 +43,15 @@
     var x = 1;
 
     // Function para limpar a tela e desenhar o circulo modficando a posição x do desenho na iteração de x
+    // var desenha = function () {
+    //   limpaTela();
+    //   circulo(x, 100, 10);
+    //   x++;
+    // }
+
+    // Function para desenhar utilizando o stroke
     var desenha = function () {
-      limpaTela();
-      circulo(x, 100, 10);
+      circuloArco(x, 200, x/2);
       x++;
     }
     // Utilizado para chamar o function a cada 10 milisegundos
