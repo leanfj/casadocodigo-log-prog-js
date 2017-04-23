@@ -54,8 +54,19 @@
       circuloArco(x, 200, x/2);
       x++;
     }
+
+
+    // Function para desenha o ponto aleatorimente no canvas
+    var desenhaAleatorio = function () {
+      var x = Math.round(Math.random() * 600);
+      var y = Math.round(Math.random() * 400);
+      limpaTela();
+      circulo(x, y, 10, 0, Math.PI*2);
+
+    }
+
     // Utilizado para chamar o function a cada 10 milisegundos
-    setInterval(desenha, 10);
+    setInterval(desenhaAleatorio, 3000);
   </script>
 </body>
 </html>
