@@ -14,7 +14,9 @@
 
     // c.fillStyle = "green";
     // c.fillRect(0, 0, 200, 400);
-
+    var funcaoSeno = function (x) {
+      return Math.sin(x/20) * 100 + 200;
+    }
     var circulo = function (x, y, raio) {
       c.fillStyle = "blue";
       c.beginPath();
@@ -51,8 +53,11 @@
 
     // Function para desenhar utilizando o stroke
     var desenha = function () {
-      circuloArco(x, 200, x/2);
+      var y = funcaoSeno(x);
+      limpaTela();
+      circuloArco(x, y, 10);
       x++;
+      console.log(x, y);
     }
 
 
@@ -65,8 +70,24 @@
 
     }
 
+    // Variável para criar objeto com imagem
+    var imagem = new Image();
+    imagem.src = "paulo-silveira-90.jpg";
+    // Function para desenhar imagem no canvas
+    var desenhaImagem = function (x, y) {
+      c.drawImage(imagem, x, y);
+    }
+
+    //Function chamando para limpar tela, desenhar na tela e movimentar no eixo x
+    var desenhaImagenTela = function () {
+      limpaTela();
+      desenhaImagem(x, 100);
+      x++;
+      console.log(x);
+    }
+
     // Utilizado para chamar o function a cada 10 milisegundos
-    setInterval(desenhaAleatorio, 3000);
+    setInterval(desenha, 10);
   </script>
 </body>
 </html>
