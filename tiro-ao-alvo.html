@@ -17,6 +17,11 @@
     margin: 0 auto;
     display: block;
   }
+  @media (max-width:500px) {
+    canvas {
+      width: 400px;
+    }
+  }
 </style>
 <body>
   <canvas id="canvas" width="600" height="400"></canvas>
@@ -113,7 +118,7 @@
 
     // Callback para click do mouse
     tela.onclick = checarAcerto;
-    // Function para dar intervalo de tempo chamando a function de desenhar na tela e setado o time 
+    // Function para dar intervalo de tempo chamando a function de desenhar na tela e setado o time
     setInterval(desenhaNaTela, 1000);
 
   </script>
